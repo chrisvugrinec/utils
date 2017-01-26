@@ -12,6 +12,7 @@ app.get('/', function(req, res){
 
 subscriber.subscribe("ABNAMRO_BUILDBCAST");
 subscriber.on("message", function(channel, message) {
+  console.log("got something");
   run_cmd( "deploy.sh", function(text) { console.log (text) });
 });
 

@@ -12,7 +12,7 @@ var client= redis.createClient(6380,'rcache1.redis.cache.windows.net', {auth_pas
         "from": req.query.from
     }
     console.log("message send by: "+req.query.from );
-    client.publish("MSBUDDYFINDER_BROADCAST", JSON.stringify(result));
+    client.publish("ABNAMRO_BUILDBCAST", JSON.stringify(result));
     return res.send("BROADCAST OK");
   });
 }

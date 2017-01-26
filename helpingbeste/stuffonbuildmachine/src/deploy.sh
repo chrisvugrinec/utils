@@ -1,5 +1,5 @@
 #!/bin/sh
-echo "hello world" >/tmp
+echo "hello world" >/tmp/XXX
 
 # pseudo code
 #docker login infra01-microsoft.azurecr.io -u infra01 -p //=N/i/x/++P==+DnstIfWQ4GZF+=Eeh

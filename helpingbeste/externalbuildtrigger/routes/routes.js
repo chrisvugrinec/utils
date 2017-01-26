@@ -11,7 +11,7 @@ var client= redis.createClient(6380,'rcache1.redis.cache.windows.net', {auth_pas
     var result = {
         "from": req.query.from
     }
-    loggerinfo.info("message send by: "+req.query.from );
+    console.log("message send by: "+req.query.from );
     client.publish("MSBUDDYFINDER_BROADCAST", JSON.stringify(result));
     return res.send("BROADCAST OK");
   });

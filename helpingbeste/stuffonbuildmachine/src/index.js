@@ -13,12 +13,12 @@ app.get('/', function(req, res){
 subscriber.subscribe("ABNAMRO_BUILDBCAST");
 subscriber.on("message", function(channel, message) {
   console.log("got something");
-  run_cmd( "deploy.sh", function(text) { console.log (text) });
+  run_cmd( "/tmp/deploy.sh", function(text) { console.log (text) });
 });
 
 function run_cmd(cmd, callBack ) {
     var spawn = require('child_process').spawn;
-    var child = spawn(cmd, args);
+    var child = spawn(cmd);
     var resp = "";
     child.stdout.on('data', function (buffer) { resp += buffer.toString() });
     child.stdout.on('end', function() { callBack (resp) });
